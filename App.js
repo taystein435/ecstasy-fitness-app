@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './screens/Home';
 import Intro from './screens/Intro';
 import Login from './screens/Login';
@@ -8,6 +9,7 @@ import Login from './screens/Login';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUp from './screens/SignUp';
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
@@ -31,7 +33,13 @@ export default function App() {
         component={Home} 
         options={{
           headerShown:false
-        }}/>
+              }}/>{()=>(
+                <Tab.Navigator>
+                  name="Login" 
+              component={Login}
+                  
+                </Tab.Navigator>
+              )}
       </Stack.Navigator>
   </NavigationContainer>);
 }
