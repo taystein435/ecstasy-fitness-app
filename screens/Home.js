@@ -1,19 +1,19 @@
-import { StyleSheet, Text,Image, View,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text,Image, View,TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import Categories from '../components/Categories'
 import HomeCard from '../components/HomeCard'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Ionicons from "react-native-vector-icons/Ionicons"
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './Login'
 import SecondCategory from '../components/SecondCategory'
 import BottomTabs from '../components/BottomTabs'
-const Tab = createBottomTabNavigator();
+
 
 const Home = () => {
   return (
     <SafeAreaView>
+      <ScrollView>
      <TouchableOpacity
         ><Ionicons name='menu-outline' color="#8f2592"  size={24}></Ionicons></TouchableOpacity>
         <Text style={{ marginLeft:2,fontSize:17,color:'black',fontWeight:'600',marginTop:10}} >Good morning Taiwo !</Text>
@@ -37,8 +37,9 @@ const Home = () => {
         </View>  
          
         <SecondCategory/>
-        
-       <BottomTabs/>
+        <SecondCategory/>
+        <HomeCard/> 
+        </ScrollView>
     </SafeAreaView>
      
   )
