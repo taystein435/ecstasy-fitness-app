@@ -14,7 +14,7 @@ const items=[
         text:" Fitness Meter",
         subone:" Track your fitness goal and watch ",
         subtwo:"your calories",
-        button:"Discover more",
+        button:"Explore more",
        },
     {
      image:require('../assets/gym2.jpg'),
